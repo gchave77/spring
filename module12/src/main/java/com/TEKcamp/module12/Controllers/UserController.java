@@ -27,22 +27,34 @@ public class UserController {
         return userRepository;
     }
 
+    //    Retrieving a list of all the users and returning it as a response
     @GetMapping
     public List<User> getUsers(){
         return userService.getUsers();
     }
 
+    //    Retrieving a specific user by their email address and returning the user as a response
+    @GetMapping(path = "/{emailAddress}")
+    public User getUser(@PathVariable String emailAddress){
+        return (User) userService.getUsers(emailAddress);
+    }
+
+    //    Retrieving a specific user by their ID and returning the user as a response
+
+    //    Storing a user in the database
     @PostMapping
     public void createUser(@RequestBody User user){
         userService.createUser(user);
 
     }
 
+    //    Updating a user in the database (Hint: find the user, set the fields from the request body, and save it again) (Make sure you test that the user has been correctly modified)
     @PutMapping
     public void updateUsers(){
 
     }
 
+    //    Deleting a user from your database (Make sure that you test that the user has been correctly removed)
     @DeleteMapping
     public void deleteUsers(){
 

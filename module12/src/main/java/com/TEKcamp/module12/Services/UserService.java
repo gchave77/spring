@@ -9,7 +9,7 @@ public interface UserService {
 
     void createUser(User user);
 
-    User getUsers(String emailAddress);
+    User getByEmailAddress(String emailAddress);
 
 //    User getByUserId(Long id);
 

@@ -38,4 +38,15 @@ public class UserServiceImplementation implements UserService {
         return userRepository.findByUserId(userId);
     }
 
+    @Override
+    public void deleteUser(String userId) {
+        User findUser = userRepository.findByUserId(userId);
+        userRepository.delete(findUser);
+    }
+
 }
+//    @Override
+//    public void removeUser(String userId) {
+//        UserEntity foundUser = repo.findByUserId(userId);
+//        repo.delete(foundUser);
+//    }

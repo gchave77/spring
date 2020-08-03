@@ -52,16 +52,17 @@ public class UserController {
 
     }
 
-    //    Updating a user in the database (Hint: find the user, set the fields from the request body, and save it again) (Make sure you test that the user has been correctly modified)
+    //    Updating a user in the database (Hint: find the user, set the fields from the request body,
+    //    and save it again) (Make sure you test that the user has been correctly modified)
     @PutMapping
     public void updateUsers(){
 
     }
 
     //    Deleting a user from your database (Make sure that you test that the user has been correctly removed)
-    @DeleteMapping
-    public void deleteUsers(){
-
+    @DeleteMapping(path = "/{userId}")
+    public void deleteUsers(@PathVariable String userId){
+        userService.deleteUser(userId);
     }
 
 }

@@ -40,6 +40,10 @@ public class UserController {
     }
 
     //    Retrieving a specific user by their ID and returning the user as a response
+//    @GetMapping(path = "/{id}")
+//    public User getUserById(@PathVariable String id){
+//        return (User) userService.getUsers(id);
+//    }
 
     //    Storing a user in the database
     @PostMapping

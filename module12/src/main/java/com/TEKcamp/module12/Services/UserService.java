@@ -11,6 +11,6 @@ public interface UserService {
 
     User getByEmailAddress(String emailAddress);
 
-//    User getByUserId(Long id);
+    User getByUserId(String userId);
 
 }

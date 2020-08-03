@@ -34,16 +34,16 @@ public class UserController {
     }
 
     //    Retrieving a specific user by their email address and returning the user as a response
-    @GetMapping(path = "/{emailAddress}")
+    @GetMapping(path = "/email/{emailAddress}")
     public User getUser(@PathVariable String emailAddress){
         return (User) userService.getByEmailAddress(emailAddress);
     }
 
     //    Retrieving a specific user by their ID and returning the user as a response
-//    @GetMapping(path = "/{userId}")
-//    public User getUserId(@PathVariable String userId){
-//        return (User) userService.getUsers(userId);
-//    }
+    @GetMapping(path = "/{userId}")
+    public User getUserId(@PathVariable String userId){
+        return (User) userService.getByUserId(userId);
+    }
 
     //    Storing a user in the database
     @PostMapping
